@@ -2,21 +2,18 @@ import '../cssFiles/AdminPage.css';
 
 import AdminUserItem from '../../components/jsFiles/AdminUserItem';
 import Footer from '../../components/jsFiles/Footer';
+import Logo from '../../graphics/Logo.svg';
 
 import axios from 'axios';
 import env from 'react-dotenv';
 import { useState, useEffect } from 'react';
-// import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
-
 import Chart from 'chart.js/auto'
 
-// ChartJS.register(ArcElement, Tooltip, Legend);
 
 function AdminPage() {
 
     const [users, setUsers] = useState([]);
-    // const [regionTallies, setRegionTallies] = useState([]);
 
     const [xValues, setXValues] = useState([])
     const [yValues, setYValues] = useState([])
@@ -28,46 +25,13 @@ function AdminPage() {
 
     useEffect(() => { getUsers(); }, []);
 
-    function tallyRegions() {
-        let tempRegionTallies = [0, 0, 0, 0, 0, 0, 0];
-        for (let i = 0; i < users.length; i++) {
-            switch (users[i].region) {
-                case 'North West':
-                    tempRegionTallies[0]++;
-                    break;
-                case 'West':
-                    tempRegionTallies[1]++;
-                    break;
-                case 'Mid-West':
-                    tempRegionTallies[2]++;
-                    break;
-                case 'South West':
-                    tempRegionTallies[3]++;
-                    break;
-                case 'South East':
-                    tempRegionTallies[4]++;
-                    break;
-                case 'Mid-Atlantic':
-                    tempRegionTallies[5]++;
-                    break;
-                case 'North East':
-                    tempRegionTallies[6]++;
-                    break;
-                default:
-                    console.log('unrecognized region while tallying. That region was: ' + users[i].region);
-                    break;
-            }
-        }
-        // setRegionTallies(tempRegionTallies);
-    }
-
-    const test = () => {
+    const setGraphValues = () => {
 
         let userRegions = []
 
-        for (let user of users){
+        for (let user of users) {
             userRegions.push(user.region)
-        }  
+        }
 
         console.log('userR', userRegions)
         // returns array of each unique data type
@@ -81,10 +45,10 @@ function AdminPage() {
         for (let entry of set) {
             names.push(entry)
             // https://stackoverflow.com/questions/37365512/count-the-number-of-times-a-same-value-appears-in-a-javascript-array
-            const count = userRegions.filter( x => x === entry).length
+            const count = userRegions.filter(x => x === entry).length
 
             nameAmount.push(count)
-            console.log(entry+":", count);
+            console.log(entry + ":", count);
         }
 
         setXValues(names)
@@ -94,7 +58,7 @@ function AdminPage() {
 
     }
 
-    useEffect(()=>{test()}, [users]);
+    useEffect(() => { setGraphValues() }, [users]);
 
     const data = {
         labels: xValues,
@@ -103,23 +67,15 @@ function AdminPage() {
                 label: 'Subs per Region',
                 data: yValues,
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)',
-                    'rgba(250, 34, 123, 0.2)'
+                    '#632390',
+                    '#7C26B5',
+                    '#913ACF',
+                    '#A35BD7',
+                    '#B67BDF',
+                    '#C89DE7',
+                    '#DABDEF'
                 ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(250, 34, 123, 1)'
-                ],
+                borderColor: 'rgba(255, 255, 255, 1)',
                 borderWidth: 1,
             },
         ],
@@ -138,10 +94,10 @@ function AdminPage() {
     return (
         <div className='AdminPage'>
             <div className='AdminHeader'>
-                <div className='TopHeader'>
-                    <img alt='Storm Chasers Logo' />
+                <div className='AdminTopHeader'>
+                    <img src={Logo} alt='Storm Chasers Logo' />
                     <div className='AdminLoginInfo'>
-                        <h5>Welcome, Admin</h5>
+                        <h4>Welcome, Admin</h4>
                         <p>Sign Out</p>
                     </div>
                 </div>
@@ -156,7 +112,13 @@ function AdminPage() {
                             maintainAspectRatio: false,
                             plugins: {
                                 legend: {
-                                    position: 'right'
+                                    position: 'right',
+                                    labels: {
+                                        font: {
+                                            family: "'Roboto', sans- serif",
+                                            size: 18
+                                        }
+                                    }
                                 }
                             }
                         }}
