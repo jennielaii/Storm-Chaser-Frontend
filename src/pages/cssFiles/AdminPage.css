@@ -1,0 +1,33 @@
+.AdminPage {
+    width: 60%;
+    display: grid;
+    grid-template-rows: 10vh 40vh 30vh;
+}
+
+.AdminHeader {
+    text-align: center;
+}
+
+.DoughnutGraph {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.UserItemsDiv {
+    margin: 2vh;
+}
+
+.UserItemsScrollDiv {
+    height: 60%;
+    overflow-y: scroll;
+}
+
+.UserItemsHeader {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+
+    margin: 5px;
+    padding: 5px;
+}
