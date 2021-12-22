@@ -119,7 +119,7 @@ function AdminPage() {
                                             size: 18
                                         }
                                     }
-                                }
+                                },
                             }
                         }}
                     />

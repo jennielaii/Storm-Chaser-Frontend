@@ -167,8 +167,8 @@ margin-right: 105px;
 }
 
 .text {
-  text-align: left;
-  display: block; 
+text-align: left;
+display: block; 
 } */
 
 .LandingBoxOne {
@@ -185,6 +185,15 @@ margin-right: 105px;
 
 .LandingTextOne {
   display: block;
+  text-align: center;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 35px;
+
+  color: #000000;
+  margin-left: 105px;
 }
 
 .LandingBoxTwo {

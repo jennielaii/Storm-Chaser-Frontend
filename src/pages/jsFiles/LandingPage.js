@@ -7,6 +7,7 @@ import env from 'react-dotenv'
 import logo from '../../graphics/Logo.svg'
 
 
+
 function LandingPage() {
 
     const [firstName, setFirstName] = useState('')
@@ -110,7 +111,7 @@ function LandingPage() {
             </div>
 
             <div className='welcome-text'>
-                <p>Welcome to Storm Chasers, where you can witness our most up-to-date, action-packed storm chasing videos and read our team’s thrilling stories.</p>
+                <p>Welcome to Storm Chasers, where you can witness our most up-to-date, action-packed storm chasing videos and read our team's thrilling stories.</p>
             </div>
 
 
@@ -119,40 +120,40 @@ function LandingPage() {
         <div className='LandingBoxOne'>
             <div class="LandingImageOne">
                 <div id="image" style={{ display: "inline"}}>
-                    <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/300px-No_image_available.svg.png"
+                    <img src = "https://i.imgur.com/s4djP27.png"
                     loading="lazy"
                     alt="Loading..."
                     />
                 </div>
             </div>
             <div class="LandingTextOne">
-                    <text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</text>
+                    <text>Get notifications when we upload a brand new storm video.</text>
                 </div>
         </div>
         <div className='LandingBoxTwo'>
             <div class="LandingImageTwo">
                 <div id="image" style={{ display: "inline"}}>
-                    <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/300px-No_image_available.svg.png"
+                    <img src = "https://i.imgur.com/nqwKEgr.jpg"
                     loading="lazy"
                     alt="Loading..."
                     />
                 </div>
             </div>
             <div class="LandingTextTwo">
-            <text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</text>
+            <text>View our gallery of the gnarliest twisters and awe-inspiring power of nature.</text>
                 </div>
         </div>
         <div className='LandingBoxThree'>
             <div class="LandingImageThree">
                 <div id="image" style={{ display: "inline"}}>
-                    <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/300px-No_image_available.svg.png"
+                    <img src = "https://i.imgur.com/Tb5bULF.jpg"
                     loading="lazy"
                     alt="Loading..."
                     />
                 </div>
             </div>
             <div class="LandingTextThree">
-            <text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</text>
+            <text>Read our team's harrowing tales of our storm encounters.</text>
                 </div>
         </div>
     </div>
