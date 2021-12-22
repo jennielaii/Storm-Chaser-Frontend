@@ -79,7 +79,46 @@ function LandingPage() {
                     
                 </form>
             </div>
+        <div className='LandingBoxOne'>
+            <div class="LandingImageOne">
+                <div id="image" style={{ display: "inline"}}>
+                    <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/300px-No_image_available.svg.png"
+                    loading="lazy"
+                    alt="Loading..."
+                    />
+                </div>
+            </div>
+            <div class="LandingTextOne">
+                    <text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</text>
+                </div>
         </div>
+        <div className='LandingBoxTwo'>
+            <div class="LandingImageTwo">
+                <div id="image" style={{ display: "inline"}}>
+                    <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/300px-No_image_available.svg.png"
+                    loading="lazy"
+                    alt="Loading..."
+                    />
+                </div>
+            </div>
+            <div class="LandingTextTwo">
+            <text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</text>
+                </div>
+        </div>
+        <div className='LandingBoxThree'>
+            <div class="LandingImageThree">
+                <div id="image" style={{ display: "inline"}}>
+                    <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/300px-No_image_available.svg.png"
+                    loading="lazy"
+                    alt="Loading..."
+                    />
+                </div>
+            </div>
+            <div class="LandingTextThree">
+            <text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</text>
+                </div>
+        </div>
+    </div>
     )
 }
 
