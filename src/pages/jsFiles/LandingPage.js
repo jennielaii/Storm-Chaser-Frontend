@@ -119,38 +119,44 @@ function LandingPage() {
 
         <div className='LandingBoxOne'>
             <div class="LandingImageOne">
-                <div id="image" style={{ display: "inline"}}>
-                    <img src = "https://i.imgur.com/s4djP27.png"
-                    loading="lazy"
-                    alt="Loading..."
-                    />
-                </div>
+                
+                <img src = "https://i.imgur.com/s4djP27.png"
+                loading="lazy"
+                alt="Loading..."
+                />
+               
             </div>
             <div class="LandingTextOne">
                     <text>Get notifications when we upload a brand new storm video.</text>
                 </div>
         </div>
+
+
+
         <div className='LandingBoxTwo'>
             <div class="LandingImageTwo">
-                <div id="image" style={{ display: "inline"}}>
-                    <img src = "https://i.imgur.com/nqwKEgr.jpg"
-                    loading="lazy"
-                    alt="Loading..."
-                    />
-                </div>
+                
+                <img src = "https://i.imgur.com/nqwKEgr.jpg"
+                loading="lazy"
+                alt="Loading..."
+                />
+                
             </div>
             <div class="LandingTextTwo">
             <text>View our gallery of the gnarliest twisters and awe-inspiring power of nature.</text>
                 </div>
         </div>
+
+
+        
         <div className='LandingBoxThree'>
             <div class="LandingImageThree">
-                <div id="image" style={{ display: "inline"}}>
-                    <img src = "https://i.imgur.com/Tb5bULF.jpg"
-                    loading="lazy"
-                    alt="Loading..."
-                    />
-                </div>
+                
+                <img src = "https://i.imgur.com/Tb5bULF.jpg"
+                loading="lazy"
+                alt="Loading..."
+                />
+                
             </div>
             <div class="LandingTextThree">
             <text>Read our team's harrowing tales of our storm encounters.</text>
