@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 import Footer from '../../components/jsFiles/Footer';
 import axios from 'axios'
 import env from 'react-dotenv'
+import logo from '../../graphics/Logo.svg'
+
+
 
 function LandingPage() {
 
@@ -11,6 +14,7 @@ function LandingPage() {
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
     const [region, setRegion] = useState("")
+    const [signupResponse, setSignupResponse] = useState({})
 
     const submitForm = async (e) => {
         try {
@@ -20,7 +24,9 @@ function LandingPage() {
                 firstName, lastName, email, region
             })
 
-            console.log(response.data.user)
+            setSignupResponse(response)
+
+            console.log(response)
 
             // setUser(response.data.user)
 
@@ -30,92 +36,124 @@ function LandingPage() {
             console.log(error)
         }
     }
+
+    
     return (
         <div className='LandingPage'>
-            <img alt='Storm Chasers Logo' />
+            <img src={logo} alt='Storm Chasers Logo' />
             {/* <Link>Login</Link> */}
 
+
+
+        
+        
             <div className='videoAndForm'>
                 {/* for youtube, replace "watch?v=" with "embed/" */}
                 <div className='form-video'>
-                    <iframe src='https://www.youtube.com/embed/Xjv1sY630Uc'></iframe>
+                    <iframe src='https://www.youtube.com/embed/D1tEE_pRDMU'></iframe>
                 </div>
                 
-                <form onSubmit={submitForm} className='signup-form'>
+                {signupResponse.status === 200 ? 
 
 
-                    <div className='email-div'>
-                        <label htmlFor="email"></label>
-                        <input placeholder='Enter your Email Address' value={email} onChange={(e) => setEmail(e.target.value)} />
-                    </div>
+                    <div className='subscribed'>
 
-                    <div className='name-div'>
-                        <label htmlFor="firstName"></label>
-                        <input placeholder='First Name' value={firstName} onChange={(e) => setFirstName(e.target.value)} />
+                        <h1>Thank you for subscribing to Storm Chasers!</h1>
 
-                        <label htmlFor="lastName"></label>
-                        <input placeholder='First Name' value={lastName} onChange={(e) => setLastName(e.target.value)} />
-                    </div>
+                        <p>Confirmation of your subscription was sent to the email you provided. Follow the link to create your account.</p>
 
-                    <div className='select-div'>
-                        <select onChange={(e) => {setRegion(e.target.value)}} name='region' id='region-list'>
-                            {/* https://stackoverflow.com/questions/17603055/placeholder-for-select-tag */}
-                            <option value="" disabled selected hidden> What region are you located in?</option>
-                            <option value=""></option>
-                            <option value='North West'>North West</option>
-                            <option value='West'>West</option>
-                            <option value='Mid-West'>Mid-West</option>
-                            <option value='South West'>South West</option>
-                            <option value='South East'>South East</option>
-                            <option value='Mid-Atlantic'>Mid-Atlantic</option>
-                            <option value='North East'>North East</option>
-                        </select>
                     </div>
                     
 
-                    <div className='submit-div'>
-                        <input type="submit" value="Subscribe Now!!" />
-                    </div>
-                    
-                </form>
+                :
+
+                    <form onSubmit={submitForm} className='signup-form'>
+
+                        <p>Want to see more exciting content?        </p>
+                        <div className='email-div'>
+                            <label htmlFor="email"></label>
+                            <input placeholder={`Enter your Email Address`} value={email} onChange={(e) => {setEmail(e.target.value); e.target.style.color = '#000000'}} />
+                        </div>
+
+                        <div className='name-div'>
+                            <label htmlFor="firstName"></label>
+                            <input placeholder='First Name' value={firstName} onChange={(e) => {setFirstName(e.target.value); e.target.style.color = '#000000'}} />
+
+                            <label htmlFor="lastName"></label>
+                            <input placeholder='Last Name' value={lastName} onChange={(e) => {setLastName(e.target.value); e.target.style.color = '#000000'}} />
+                        </div>
+
+                        <div className='select-div'>
+                            <label htmlFor="region"></label>
+                            <select onChange={(e) => {setRegion(e.target.value); e.target.style.color = '#000000'}} name='region' id='region-list'>
+                                {/* <label> */}
+                                    {/* https://stackoverflow.com/questions/17603055/placeholder-for-select-tag */}
+                                    <option  value="" disabled selected hidden>{"What region are you located in?"}</option>
+                                    <option value='North West'>North West</option>
+                                    <option value='West'>West</option>
+                                    <option value='Mid-West'>Mid-West</option>
+                                    <option value='South West'>South West</option>
+                                    <option value='South East'>South East</option>
+                                    <option value='Mid-Atlantic'>Mid-Atlantic</option>
+                                    <option value='North East'>North East</option>
+                                {/* </label> */}
+
+                            </select>
+                        </div>
+                        
+
+                        <div className='submit-div'>
+                            <input type="submit" value="Subscribe Now!!" />
+                        </div>
+                        
+                    </form>
+                }
             </div>
+
+            <div className='welcome-text'>
+                <p>Welcome to Storm Chasers, where you can witness our most up-to-date, action-packed storm chasing videos and read our team's thrilling stories.</p>
+            </div>
+
+
+
+
         <div className='LandingBoxOne'>
             <div class="LandingImageOne">
                 <div id="image" style={{ display: "inline"}}>
-                    <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/300px-No_image_available.svg.png"
+                    <img src = "https://i.imgur.com/s4djP27.png"
                     loading="lazy"
                     alt="Loading..."
                     />
                 </div>
             </div>
             <div class="LandingTextOne">
-                    <text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</text>
+                    <text>Get notifications when we upload a brand new storm video.</text>
                 </div>
         </div>
         <div className='LandingBoxTwo'>
             <div class="LandingImageTwo">
                 <div id="image" style={{ display: "inline"}}>
-                    <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/300px-No_image_available.svg.png"
+                    <img src = "https://i.imgur.com/nqwKEgr.jpg"
                     loading="lazy"
                     alt="Loading..."
                     />
                 </div>
             </div>
             <div class="LandingTextTwo">
-            <text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</text>
+            <text>View our gallery of the gnarliest twisters and awe-inspiring power of nature.</text>
                 </div>
         </div>
         <div className='LandingBoxThree'>
             <div class="LandingImageThree">
                 <div id="image" style={{ display: "inline"}}>
-                    <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/300px-No_image_available.svg.png"
+                    <img src = "https://i.imgur.com/Tb5bULF.jpg"
                     loading="lazy"
                     alt="Loading..."
                     />
                 </div>
             </div>
             <div class="LandingTextThree">
-            <text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</text>
+            <text>Read our team's harrowing tales of our storm encounters.</text>
                 </div>
         </div>
     </div>
