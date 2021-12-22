@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Footer from '../../components/jsFiles/Footer';
 import axios from 'axios'
 import env from 'react-dotenv'
-import logo from '../../logo/Logo.svg'
+import logo from '../../graphics/Logo.svg'
 
 
 function LandingPage() {
@@ -57,7 +57,7 @@ function LandingPage() {
 
                     <div className='subscribed'>
 
-                        <h1>Thank you for subscribing to Storm Chasers, {signupResponse.data.user.email}!</h1>
+                        <h1>Thank you for subscribing to Storm Chasers!</h1>
 
                         <p>Confirmation of your subscription was sent to the email you provided. Follow the link to create your account.</p>
 
@@ -112,13 +112,50 @@ function LandingPage() {
             <div className='welcome-text'>
                 <p>Welcome to Storm Chasers, where you can witness our most up-to-date, action-packed storm chasing videos and read our team’s thrilling stories.</p>
             </div>
-        
-        
-        
-        
-            
 
+
+
+
+        <div className='LandingBoxOne'>
+            <div class="LandingImageOne">
+                <div id="image" style={{ display: "inline"}}>
+                    <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/300px-No_image_available.svg.png"
+                    loading="lazy"
+                    alt="Loading..."
+                    />
+                </div>
+            </div>
+            <div class="LandingTextOne">
+                    <text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</text>
+                </div>
         </div>
+        <div className='LandingBoxTwo'>
+            <div class="LandingImageTwo">
+                <div id="image" style={{ display: "inline"}}>
+                    <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/300px-No_image_available.svg.png"
+                    loading="lazy"
+                    alt="Loading..."
+                    />
+                </div>
+            </div>
+            <div class="LandingTextTwo">
+            <text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</text>
+                </div>
+        </div>
+        <div className='LandingBoxThree'>
+            <div class="LandingImageThree">
+                <div id="image" style={{ display: "inline"}}>
+                    <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/300px-No_image_available.svg.png"
+                    loading="lazy"
+                    alt="Loading..."
+                    />
+                </div>
+            </div>
+            <div class="LandingTextThree">
+            <text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</text>
+                </div>
+        </div>
+    </div>
     )
 }
 
