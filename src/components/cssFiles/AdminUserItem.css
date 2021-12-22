@@ -5,5 +5,8 @@
     margin: 5px;
     padding: 5px;
 
-    background-color: gainsboro;
+    border-bottom: 1px solid black;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
 }
