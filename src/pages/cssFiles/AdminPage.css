@@ -5,7 +5,14 @@
 }
 
 .AdminHeader {
-  text-align: center;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.GraphContainer {
+    display: flex;
 }
 
 .DoughnutGraph {

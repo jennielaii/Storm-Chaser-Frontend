@@ -137,24 +137,31 @@ function AdminPage() {
 
     return (
         <div className='AdminPage'>
-            <h2 className='AdminHeader'>Data Collection Dashboard</h2>
-            <div className='DoughnutGraph'>
-                <Doughnut
-                    data={data}
-                    options={{
-                        maintainAspectRatio: false,
-                        plugins: {
-                            legend: {
-                                position: 'right'
-                            },
-                            title: {
-                                display: true,
-                                text: 'Subscribers by Region',
-                                position: 'left'
+            <div className='AdminHeader'>
+                <div className='TopHeader'>
+                    <img alt='Storm Chasers Logo' />
+                    <div className='AdminLoginInfo'>
+                        <h5>Welcome, Admin</h5>
+                        <p>Sign Out</p>
+                    </div>
+                </div>
+                <h2 className='AdminTitle'>Data Collection Dashboard</h2>
+            </div>
+            <div className='GraphContainer'>
+                <h4>Subscribers by Region</h4>
+                <div className='DoughnutGraph'>
+                    <Doughnut
+                        data={data}
+                        options={{
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: {
+                                    position: 'right'
+                                }
                             }
-                        }
-                    }}
-                />
+                        }}
+                    />
+                </div>
             </div>
             <div className='UserItemsDiv'>
                 <div className='UserItemsHeader'>
