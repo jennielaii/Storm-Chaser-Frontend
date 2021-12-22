@@ -119,7 +119,8 @@ function AdminPage() {
                                             size: 18
                                         }
                                     }
-                                }
+                                },
+                                datal
                             }
                         }}
                     />
