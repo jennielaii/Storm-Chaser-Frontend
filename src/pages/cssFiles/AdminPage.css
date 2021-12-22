@@ -1,4 +1,5 @@
 .AdminPage {
+    margin-top: 50px;
     width: 70%;
     display: grid;
     grid-template-rows: 15vh 45vh 35vh;
@@ -50,10 +51,14 @@
 
 .DoughnutGraph {
     width: 75%;
-    height: 85%;
+    height: 80%;
     margin-top: 20px;
     display: flex;
     align-items: center;
+}
+
+.DoughnutGraph > canvas {
+    overflow: visible;
 }
 
 .UserItemsDiv {
