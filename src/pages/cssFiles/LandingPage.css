@@ -36,21 +36,6 @@ select {}
   border-radius: 69px;
 }
 
-/* .image {
-display: flex;
-align-items: center;
-justify-content: center;
-width: 490px;
-height: 274px;
-margin-top:36px;
-margin-right: 105px;
-}
-
-.text {
-text-align: left;
-display: block; 
-} */
-
 .LandingBoxOne {
   display: flex;
   align-items: center;
@@ -58,7 +43,9 @@ display: block;
   margin-top: 36px;
 }
 
-.LandingImageOne {}
+.LandingImageOne {
+
+}
 
 .LandingTextOne {
   display: block;
