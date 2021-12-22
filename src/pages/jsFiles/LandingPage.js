@@ -109,7 +109,7 @@ function LandingPage() {
         <div className='LandingBoxThree'>
             <div class="LandingImageThree">
                 <div id="image" style={{ display: "inline"}}>
-                    <img src = "https://i.imgur.com/Tb5bULF.jpg"
+                    <img src = "https://i.imgur.com/cH7M46X.jpg"
                     loading="lazy"
                     alt="Loading..."
                     />
