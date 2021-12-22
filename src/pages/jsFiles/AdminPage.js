@@ -8,7 +8,10 @@ import axios from 'axios';
 import env from 'react-dotenv';
 import { useState, useEffect } from 'react';
 import { Doughnut } from 'react-chartjs-2';
-import Chart from 'chart.js/auto'
+import Chart from 'chart.js/auto';
+import ChartDataLabels from 'chartjs-plugin-datalabels';
+
+Chart.register(ChartDataLabels);
 
 
 function AdminPage() {
@@ -17,6 +20,7 @@ function AdminPage() {
 
     const [xValues, setXValues] = useState([])
     const [yValues, setYValues] = useState([])
+    const [regionTotal, setRegionTotal] = useState(0);
 
     async function getUsers() {
         const response = await axios.get(`${env.BACKEND_URL}/user`);
@@ -42,17 +46,20 @@ function AdminPage() {
 
         let names = []
         let nameAmount = []
+        let nameAmountTotal = 0;
         for (let entry of set) {
             names.push(entry)
             // https://stackoverflow.com/questions/37365512/count-the-number-of-times-a-same-value-appears-in-a-javascript-array
             const count = userRegions.filter(x => x === entry).length
 
+            nameAmountTotal += count;
             nameAmount.push(count)
             console.log(entry + ":", count);
         }
 
         setXValues(names)
         setYValues(nameAmount)
+        setRegionTotal(nameAmountTotal);
         // console.log('xValues', names)
         // console.log('yValues', nameAmount)
 
@@ -120,7 +127,25 @@ function AdminPage() {
                                         }
                                     }
                                 },
-                                datal
+                                datalabels: {
+                                    display: true,
+                                    align: 'bottom',
+                                    backgroundColor: '#ccc',
+                                    borderRadius: 3,
+                                    font: {
+                                        size: 18,
+                                        family: "'Roboto', sans- serif"
+                                    },
+                                    formatter: (value) => {
+                                        return (Math.round((value / regionTotal) * 100) + '%');
+                                    },
+                                    anchor: 'end',
+                                    align: 'end',
+                                    clamp: true
+                                }
+                            },
+                            layout: {
+                                padding: 35
                             }
                         }}
                     />

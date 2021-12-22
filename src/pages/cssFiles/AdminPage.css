@@ -50,10 +50,14 @@
 
 .DoughnutGraph {
     width: 75%;
-    height: 85%;
+    height: 80%;
     margin-top: 20px;
     display: flex;
     align-items: center;
+}
+
+.DoughnutGraph > canvas {
+    overflow: visible;
 }
 
 .UserItemsDiv {
