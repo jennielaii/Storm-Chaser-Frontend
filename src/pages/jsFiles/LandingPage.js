@@ -62,13 +62,13 @@ function LandingPage() {
                             {/* https://stackoverflow.com/questions/17603055/placeholder-for-select-tag */}
                             <option value="" disabled selected hidden> What region are you located in?</option>
                             <option value=""></option>
-                            <option value='North-West'>North-West</option>
+                            <option value='North West'>North West</option>
                             <option value='West'>West</option>
                             <option value='Mid-West'>Mid-West</option>
-                            <option value='South-West'>South-West</option>
-                            <option value='South-East'>South-East</option>
+                            <option value='South West'>South West</option>
+                            <option value='South East'>South East</option>
                             <option value='Mid-Atlantic'>Mid-Atlantic</option>
-                            <option value='North-East'>North-East</option>
+                            <option value='North East'>North East</option>
                         </select>
                     </div>
                     
