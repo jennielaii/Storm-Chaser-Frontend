@@ -29,8 +29,8 @@
   border-radius: 10px;
 }
 
-select {
-}
+select {}
+
 .submit-div input {
   background: #343434;
   border-radius: 69px;
@@ -47,57 +47,81 @@ margin-right: 105px;
 }
 
 .text {
-  text-align: left;
-  display: block; 
+text-align: left;
+display: block; 
 } */
 
 .LandingBoxOne {
-display: flex;
-align-items: center;
-justify-content: center;
-margin-top:36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 36px;
 }
 
-.LandingImageOne {
-width: 490px;
-height: 274px;
-
-}
+.LandingImageOne {}
 
 .LandingTextOne {
   display: block;
+  text-align: center;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 35px;
+
+  color: #000000;
+  margin-left: 105px;
 }
 
 .LandingBoxTwo {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top:36px;
-  }
-  
-  .LandingImageTwo {
-  width: 490px;
-  height: 274px;
-  
-  }
-  
-  .LandingTextTwo {
-    display: block;
-  }
+  margin-top: 36px;
+}
 
-  .LandingBoxThree {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top:36px;
-    }
-    
-    .LandingImageThree {
-    width: 490px;
-    height: 274px;
-    
-    }
-    
-    .LandingTextThree {
-      display: block;
-    }
+.LandingImageTwo {
+  /* width: 490px;
+height: 274px; */
+
+}
+
+.LandingTextTwo {
+  display: block;
+  text-align: center;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 35px;
+
+  color: #000000;
+  margin-left: 105px;
+}
+
+.LandingBoxThree {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 36px;
+}
+
+.LandingImageThree {
+  /* width: 490px;
+  height: 274px; */
+
+}
+
+.LandingTextThree {
+  display: block;
+  display: block;
+  text-align: center;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 35px;
+
+  color: #000000;
+  margin-left: 105px;
+}
