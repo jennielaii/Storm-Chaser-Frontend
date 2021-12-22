@@ -6,15 +6,20 @@ import Footer from '../../components/jsFiles/Footer';
 import axios from 'axios';
 import env from 'react-dotenv';
 import { useState, useEffect } from 'react';
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+// import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
 
-ChartJS.register(ArcElement, Tooltip, Legend);
+import Chart from 'chart.js/auto'
+
+// ChartJS.register(ArcElement, Tooltip, Legend);
 
 function AdminPage() {
 
     const [users, setUsers] = useState([]);
-    const [regionTallies, setRegionTallies] = useState([]);
+    // const [regionTallies, setRegionTallies] = useState([]);
+
+    const [xValues, setXValues] = useState([])
+    const [yValues, setYValues] = useState([])
 
     async function getUsers() {
         const response = await axios.get(`${env.BACKEND_URL}/user`);
@@ -53,17 +58,50 @@ function AdminPage() {
                     break;
             }
         }
-        setRegionTallies(tempRegionTallies);
+        // setRegionTallies(tempRegionTallies);
     }
 
-    useEffect(tallyRegions, [users]);
+    const test = () => {
+
+        let userRegions = []
+
+        for (let user of users){
+            userRegions.push(user.region)
+        }  
+
+        console.log('userR', userRegions)
+        // returns array of each unique data type
+        let set = new Set(userRegions);
+
+        console.log('set', set)
+
+
+        let names = []
+        let nameAmount = []
+        for (let entry of set) {
+            names.push(entry)
+            // https://stackoverflow.com/questions/37365512/count-the-number-of-times-a-same-value-appears-in-a-javascript-array
+            const count = userRegions.filter( x => x === entry).length
+
+            nameAmount.push(count)
+            console.log(entry+":", count);
+        }
+
+        setXValues(names)
+        setYValues(nameAmount)
+        // console.log('xValues', names)
+        // console.log('yValues', nameAmount)
+
+    }
+
+    useEffect(()=>{test()}, [users]);
 
     const data = {
-        labels: ['North West', 'West', 'Mid-West', 'South West', 'South East', 'Mid-Atlantic', 'North East'],
+        labels: xValues,
         datasets: [
             {
                 label: 'Subs per Region',
-                data: regionTallies,
+                data: yValues,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
