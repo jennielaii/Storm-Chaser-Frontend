@@ -120,7 +120,6 @@ function AdminPage() {
                                         }
                                     }
                                 },
-                                datal
                             }
                         }}
                     />
