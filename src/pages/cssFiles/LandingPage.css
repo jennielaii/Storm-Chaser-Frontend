@@ -35,3 +35,69 @@ select {
   background: #343434;
   border-radius: 69px;
 }
+
+/* .image {
+display: flex;
+align-items: center;
+justify-content: center;
+width: 490px;
+height: 274px;
+margin-top:36px;
+margin-right: 105px;
+}
+
+.text {
+  text-align: left;
+  display: block; 
+} */
+
+.LandingBoxOne {
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top:36px;
+}
+
+.LandingImageOne {
+width: 490px;
+height: 274px;
+
+}
+
+.LandingTextOne {
+  display: block;
+}
+
+.LandingBoxTwo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top:36px;
+  }
+  
+  .LandingImageTwo {
+  width: 490px;
+  height: 274px;
+  
+  }
+  
+  .LandingTextTwo {
+    display: block;
+  }
+
+  .LandingBoxThree {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top:36px;
+    }
+    
+    .LandingImageThree {
+    width: 490px;
+    height: 274px;
+    
+    }
+    
+    .LandingTextThree {
+      display: block;
+    }
